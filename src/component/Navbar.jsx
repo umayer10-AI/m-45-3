@@ -1,4 +1,6 @@
 "use client"
+import { signOut, useSession } from "@/lib/auth-client";
+import { Button } from "@heroui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -6,6 +8,14 @@ import React from "react";
 const Navbar = () => {
 
     const p = usePathname()
+    const {data,pending} = useSession()
+
+    if(pending){
+        return <span className="loading loading-spinner text-info"></span>
+    }
+
+    console.log(data)
+    const user = data?.user
 
   return (
     <div>
@@ -23,7 +33,18 @@ const Navbar = () => {
                 <Link href="/about" className={p==='/about'? "btn btn-accent btn-outline":"btn"}>About</Link>
                 </li>
           </ul>
-          
+
+          <div>
+            {
+                user? <>
+                    <Button onClick={() => signOut()} variant="danger-soft">Sign Out</Button>
+                </> : 
+                <>
+                    <Link href={"/auth/signin"}><Button>Sign in</Button></Link>
+                </>
+            }
+          </div>
+
         </header>
       </nav>
     </div>
