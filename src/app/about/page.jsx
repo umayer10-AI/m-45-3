@@ -1,5 +1,6 @@
 import BooksCArt from '@/component/BooksCArt';
 import ModalTask from '@/component/Modal';
+import { createTask } from '@/lib/action';
 import { auth } from '@/lib/auth';
 import { getPost } from '@/lib/cart';
 import { headers } from 'next/headers';
@@ -25,7 +26,7 @@ const page = async () => {
         <div className='max-w-[90%] mx-auto'>
             <h2 className='text-3xl font-bold text-center my-10'>About Page: {data.length}</h2>
             <div className='flex justify-center'>
-                <ModalTask></ModalTask>
+                <ModalTask createTask={createTask}></ModalTask>
             </div>
 
             <div className='grid grid-cols-3'>
