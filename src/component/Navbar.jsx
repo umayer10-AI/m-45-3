@@ -40,7 +40,8 @@ const Navbar = () => {
                     <Button onClick={() => signOut()} variant="danger-soft">Sign Out</Button>
                 </> : 
                 <>
-                    <Link href={"/auth/signin"}><Button>Sign in</Button></Link>
+                    <Link href={"/auth/signup"}><Button variant="secondary">Sign Up</Button></Link>
+                    <Link href={"/auth/signin"}><Button>Sign In</Button></Link>
                 </>
             }
           </div>
