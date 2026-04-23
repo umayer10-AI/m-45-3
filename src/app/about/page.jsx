@@ -1,4 +1,7 @@
+import BooksCArt from '@/component/BooksCArt';
+import ModalTask from '@/component/Modal';
 import { auth } from '@/lib/auth';
+import { getPost } from '@/lib/cart';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import React from 'react';
@@ -16,9 +19,20 @@ const page = async () => {
         redirect("/auth/signin")
     }
 
+    const data = await getPost()
+
     return (
-        <div>
-            <h2 className='text-3xl font-bold text-center my-10'>About Page</h2>
+        <div className='max-w-[90%] mx-auto'>
+            <h2 className='text-3xl font-bold text-center my-10'>About Page: {data.length}</h2>
+            <div className='flex justify-center'>
+                <ModalTask></ModalTask>
+            </div>
+
+            <div className='grid grid-cols-3'>
+                {
+                    data.map(v => <BooksCArt key={v.id} book={v}></BooksCArt>)
+                }
+            </div>
         </div>
     );
 };

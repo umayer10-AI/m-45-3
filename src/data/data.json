@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "price": 450,
+    "category": "Programming",
+    "rating": 4.8,
+    "inStock": true,
+    "publishedYear": 2008
+  },
+  {
+    "id": 2,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt",
+    "price": 500,
+    "category": "Programming",
+    "rating": 4.7,
+    "inStock": true,
+    "publishedYear": 1999
+  },
+  {
+    "id": 3,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "price": 350,
+    "category": "Self Development",
+    "rating": 4.9,
+    "inStock": true,
+    "publishedYear": 2018
+  },
+  {
+    "id": 4,
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "price": 300,
+    "category": "Finance",
+    "rating": 4.6,
+    "inStock": false,
+    "publishedYear": 1997
+  },
+  {
+    "id": 5,
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen",
+    "price": 800,
+    "category": "Computer Science",
+    "rating": 4.5,
+    "inStock": true,
+    "publishedYear": 2009
+  }
+]

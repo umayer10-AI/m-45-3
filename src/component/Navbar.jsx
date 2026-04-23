@@ -32,6 +32,9 @@ const Navbar = () => {
                 <li>
                 <Link href="/about" className={p==='/about'? "btn btn-accent btn-outline":"btn"}>About</Link>
                 </li>
+                <li>
+                <Link href="/product" className={p==='/product'? "btn btn-accent btn-outline":"btn"}>Product</Link>
+                </li>
           </ul>
 
           <div>
