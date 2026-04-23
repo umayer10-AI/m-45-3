@@ -4,6 +4,7 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import ThemeToggole from "./ThemeToggole";
 
 const Navbar = () => {
 
@@ -27,17 +28,18 @@ const Navbar = () => {
 
           <ul className="flex items-center gap-4">
                 <li>
-                <Link href="/" className={p==='/'? "btn btn-accent btn-outline":"btn"}>Home</Link>
+                <Link href="/">Home</Link>
                 </li>
                 <li>
-                <Link href="/about" className={p==='/about'? "btn btn-accent btn-outline":"btn"}>About</Link>
+                <Link href="/about">About</Link>
                 </li>
                 <li>
-                <Link href="/product" className={p==='/product'? "btn btn-accent btn-outline":"btn"}>Product</Link>
+                <Link href="/product">Product</Link>
                 </li>
           </ul>
 
-          <div>
+          <div className="flex items-center gap-2">
+            <ThemeToggole></ThemeToggole>
             {
                 user? <>
                     <Button onClick={() => signOut()} variant="danger-soft">Sign Out</Button>
